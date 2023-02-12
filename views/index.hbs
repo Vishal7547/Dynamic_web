@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic web</title>
+    {{!-- bootstrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+ {{!-- fontawesome link --}}
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+   {{>navbar data=details}}
+   {{>slider data=slider}}
+
+  {{!-- this is banner 1 section --}}
+
+<section class="banner1_section text-center py-5 bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Start learning new technology</h1>
+                 <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur explicabo autem vero aliquid sapiente amet ex cumque minus, est ipsum qui eius, odio harum modi inventore nesciunt provident accusantium? Hic?
+                 </p>
+              <button class="btn btn-danger">
+                start learning
+              </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+   {{!-services section-  --}}
+   <section id="services_section" class="py-3">
+ <div class="container">
+    <h1 class="text-center text-secondary">services that we provided </h1>
+ <div class="row mt-5">
+    {{!-- first services column --}}
+    {{#each service}}
+    <div class="col-md-4">
+<div class="card">
+<div class="card-body">
+    <div class="row text-center py-3">
+    <i class="{{this.icon}} service_icon"></i>
+
+    </div>
+    <h5 class="card-title">{{this.title}}</h5>
+    <p>{{this.description}}</p>
+     <a href="{{this.link}}">{{this.linkText}}</a>
+      <a href="!#" class="ml-3">support</a>
+</div>
+</div>
+    </div>
+    {{/each}}
+ </div>
+ </div>
+   </section>
+
+    {{!--contact us section  --}}
+
+    <section id="contact_us_section" class="py-5">
+<div class="container">
+    <h3 class="text-center text-secondary">Contact us</h3>
+    <div class="row">
+        <div class="col-12">
+
+        <form action="/process-contact-form" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Your email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="contactNumber" class="form-label">Your contact number</label>
+            <input name="phone" type="number" class="form-control" id="contactNumber">
+        </div>
+
+        <div class="form-floating mt-2">
+            <textarea name="query" style="height:150px" class="form-control" placeholder="enter your query here" id="queryField"></textarea>
+            <label for="queryField">Comments</label>
+        </div>
+       
+       <div class="container text-center my-3">
+        <button type="submit" class="btn btn-dark">Submit</button>
+       </div>
+        </form>
+
+        </div>
+    </div>
+</div>
+    </section>
+ 
+{{!-- banner2-section --}}
+
+
+
+<section class="banner2_section py-5">
+    <div class="container text-center">
+<div class="row">
+    <div class="col-md-6 text-center">
+    {{!-- left side --}}
+    <h3>
+        we work for people not for money
+    </h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nulla praesentium fuga reiciendis repellendus quos ducimus distinctio vitae nam sed, saepe ipsum iusto enim minima eum consequatur aut iure. Sequi.
+        Voluptatem, vel unde. Dolore ab id, beatae deserunt consectetur placeat excepturi vero accusantium architecto eligendi sit laborum nesciunt itaque? Sed corporis velit asperiores molestiae quaerat delectus dolor provident consectetur sit!
+    </p>
+<button class="btn btn-primary">
+    click here
+</button>
+
+</div>
+<div class="col-md-6">
+    {{!-- right side --}}
+    <img src="/static/images/banner1.jpg" alt="banner1" class="img-fluid">
+</div>
+</div>
+    </div>
+</section>
+
+{{!-- banner3 section --}}
+
+<section class="banner3_section py-5">
+    <div class="container text-center">
+<div class="row">
+    <div class="col-md-6">
+    {{!-- right side --}}
+    <img src="/static/images/banner2.jpg" alt="banner1" class="img-fluid">
+</div>
+    <div class="col-md-6 text-center">
+    {{!-- left side --}}
+    <h3>
+        we work for people not for money
+    </h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nulla praesentium fuga reiciendis repellendus quos ducimus distinctio vitae nam sed, saepe ipsum iusto enim minima eum consequatur aut iure. Sequi.
+        Voluptatem, vel unde. Dolore ab id, beatae deserunt consectetur placeat excepturi vero accusantium architecto eligendi sit laborum nesciunt itaque? Sed corporis velit asperiores molestiae quaerat delectus dolor provident consectetur sit!
+    </p>
+<button class="btn btn-primary">
+    click here
+</button>
+
+</div>
+
+</div>
+    </div>
+</section>
+
+{{!-- about section --}}
+
+<section class="about_section py-5">
+   <div class="container text-center">
+     <div class="row">
+        <div class="col-12">
+            <h3>About this site</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, temporibus? In assumenda, fugiat blanditiis eum neque unde excepturi! Officiis quidem rerum aspernatur natus odio provident beatae, numquam commodi ipsa tempora.
+                Corporis illum unde est perferendis beatae nulla facilis ad cupiditate quibusdam enim ipsa tempora quas illo quam modi placeat, doloribus magni, qui accusantium, fugit dignissimos quasi optio minus ab. Quam!
+                Blanditiis nostrum nobis nam dicta quod. Blanditiis quisquam fuga quidem dolorem fugit. Iste soluta sed laudantium, praesentium esse maiores doloremque alias, facere aliquid distinctio ut dolor explicabo, exercitationem rerum! Ullam.
+            </p>
+
+            <button class="btn btn-success">know more</button>
+        </div>
+    </div>
+   </div>
+</section>
+
+
+{{!-- footer --}}
+
+
+    {{!-- bootstrap js link --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+ {{!-- js link --}}
+ <script src="/static/js/event.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+
+.slider-image{
+height:500px !important;
+object-fit: cover;
+
+}
+.service_icon{
+    font-size: 100px;
+}
+#contact_us_section{
+    background-image: linear-gradient(to right,black,rgb(0.0.0.5));
+    
+}
